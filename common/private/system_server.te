@@ -18,6 +18,10 @@ get_prop(system_server, vendor_persist_camera_prop)
 # Let system server toggle xtra-daemon
 set_prop(system_server, xtra_control_prop)
 
+# Webview
+allow system_server webview_zygote:process setsched;
+allow system_server app_zygote:process setsched;
+
 # Freeform
 add_service(system_server, lmofreeform_service);
 
